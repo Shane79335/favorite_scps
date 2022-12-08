@@ -1,0 +1,23 @@
+/* This file is for your main application CSS */
+@import "./phoenix.css";
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.scp-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+}
+.scp-info {
+  display: flex;
+  flex-direction: row;
+}

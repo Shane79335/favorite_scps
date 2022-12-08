@@ -1,0 +1,26 @@
+<%= if @unauthorized do %>
+    <h1>You are unauthorized to edit this scp file.</h1>
+    <h1>Please return to the dashboard</h1>
+<% else %>
+    <h1>Edit</h1>
+
+    <%= form_for @changeset, Routes.scp_path(@conn, :update, @scp_id), fn f -> %>
+
+        <label>
+            Title
+            <%= text_input f, :title %>
+        </label>
+
+        <label>
+            descrption
+            <%= text_input f, :descrption %>
+        </label>
+
+        <label>
+            Cover Art URL
+            <%= text_input f, :scp_art %>
+        </label>
+
+        <%= submit "Update" %>
+    <% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Hello, <%= @user.name %></h1>
+
+<div id="details">
+    <p><%= length(@user.scp) %> scp(s)</p>
+</div>
+
+<div class="card-container" id="scp">
+    <%= for scp <- @user.scp do %>
+        <div class="scp-card" id="scp-#{scp.id}">
+            <%= if scp.scp_art != nil do %>
+                <div>
+                    <img src={scp.scp_art} />
+                </div>
+            <% end %>
+            <div class="scp-info">
+                <div>
+                    <h2><%= scp.title %></h2>
+                    <h3><%= scp.descrption %></h3>
+                </div>
+                <div>
+                    <p><%= scp.related_scps %></p>
+                </div>
+            </div>
+            <div>
+                <a href={Routes.scp_path(@conn, :edit, scp.id)}>Edit</a>
+            </div>
+        </div>
+    <% end %>
+</div>

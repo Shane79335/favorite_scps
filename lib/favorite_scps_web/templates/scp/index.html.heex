@@ -1,0 +1,8 @@
+<%= for scp <- @scp do  %>
+  <div id={scp.title}>
+    <h2><%= scp.title %></h2>
+    <p><%= scp.description %></p>
+
+    <p>Owned by: <%= scp.user.name %></p>
+  </div>
+<% end %>
