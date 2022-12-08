@@ -14,7 +14,7 @@ def create(conn, %{"auth" => %{"email" => email, "password" => password}} = para
   case Auth.authenticate(email, password) do
     %User{} = user ->
       token =
-        Phoenix.Token.sign(VideoGameOrganizerWeb.Endpoint, "THIS_IS_A_BAD_SECRET", user.id)
+        Phoenix.Token.sign(FavoriteScpsWeb.Endpoint, "THIS_IS_A_BAD_SECRET", user.id)
 
         # Put a token into temporary session
       conn
