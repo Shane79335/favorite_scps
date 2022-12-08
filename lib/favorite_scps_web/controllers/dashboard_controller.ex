@@ -16,7 +16,7 @@ defmodule FavoriteScpsWeb.DashboardController  do
     user =
       User
       |> Repo.get(user_id)
-      |> Repo.preload([:games])
+      |> Repo.preload([:scp])
     assign(conn, :authenticated_user, user)
   end
 end

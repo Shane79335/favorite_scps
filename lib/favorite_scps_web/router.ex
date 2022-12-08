@@ -20,7 +20,7 @@ defmodule FavoriteScpsWeb.Router do
 
     get "/", PageController, :index
 
-    resources "/games", ScpController, only: [:index, :edit, :update]
+    resources "/scp", ScpController, only: [:index, :edit, :update]
     resources "/user", UserController, only: [:new, :create]
     resources "/session", SessionController, only: [:new, :create]
 
